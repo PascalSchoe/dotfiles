@@ -1,0 +1,30 @@
+2019/02/24-10:44:00.049 1e5c Reusing MANIFEST /home/pschoe/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2019/02/24-10:44:00.050 1e5c Recovering log #7943
+2019/02/24-10:44:00.062 1e5c Reusing old log /home/pschoe/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/007943.log 
+2019/02/24-10:44:03.963 1f1e Level-0 table #7950: started
+2019/02/24-10:44:04.462 1f1e Level-0 table #7950: 3134125 bytes OK
+2019/02/24-10:44:04.472 1e60 Current memtable full; waiting...
+2019/02/24-10:44:04.530 1f1e Delete type=0 #7943
+2019/02/24-10:44:04.533 1f1e Level-0 table #7952: started
+2019/02/24-10:44:04.705 1f1e Level-0 table #7952: 2406302 bytes OK
+2019/02/24-10:44:04.750 1f1e Delete type=0 #7949
+2019/02/24-10:44:06.626 1f1e Level-0 table #7954: started
+2019/02/24-10:44:07.017 1f1e Level-0 table #7954: 3165540 bytes OK
+2019/02/24-10:44:07.026 1e60 Current memtable full; waiting...
+2019/02/24-10:44:07.168 1f1e Delete type=0 #7951
+2019/02/24-10:44:07.171 1f1e Level-0 table #7956: started
+2019/02/24-10:44:07.318 1f1e Level-0 table #7956: 2406302 bytes OK
+2019/02/24-10:44:07.353 1f1e Delete type=0 #7953
+2019/02/24-10:44:07.355 1f1e Compacting 4@0 + 3@1 files
+2019/02/24-10:44:07.544 1f1e Generated table #7957@0: 22 keys, 3164568 bytes
+2019/02/24-10:44:07.670 1f1e Generated table #7958@0: 1 keys, 2406193 bytes
+2019/02/24-10:44:07.703 1f1e Generated table #7959@0: 20 keys, 2161 bytes
+2019/02/24-10:44:07.703 1f1e Compacted 4@0 + 3@1 files => 5572922 bytes
+2019/02/24-10:44:07.745 1f1e compacted to: files[ 0 3 3 0 0 0 0 ]
+2019/02/24-10:44:07.745 1f1e Delete type=2 #7954
+2019/02/24-10:44:07.746 1f1e Delete type=2 #7950
+2019/02/24-10:44:07.746 1f1e Delete type=2 #7956
+2019/02/24-10:44:07.746 1f1e Delete type=2 #7946
+2019/02/24-10:44:07.747 1f1e Delete type=2 #7952
+2019/02/24-10:44:07.747 1f1e Delete type=2 #7947
+2019/02/24-10:44:07.747 1f1e Delete type=2 #7945

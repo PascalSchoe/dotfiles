@@ -1,0 +1,64 @@
+{
+   "author": "Devart",
+   "background": {
+      "scripts": [ "lib/jquery.min.js", "lib/jquery.signalr.min.js", "background/simpleEvent.js", "background/signalRConnection.js", "background/extensionBase.js", "background/chromeExtension.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/inactive19.png",
+         "38": "images/inactive38.png"
+      },
+      "default_popup": "popup/popup.html",
+      "default_title": "Not Connected"
+   },
+   "content_scripts": [ {
+      "exclude_matches": [ "https://chrome.google.com/webstore/*", "https://addons.opera.com/*", "*://*/*lib/execute/execSetResults.php*", "https://*/*portal/*/*.do*", "https://*/*crm/*", "https://*/*/tasks*" ],
+      "js": [ "in-page-scripts/utils.js", "in-page-scripts/integrationService.js", "in-page-scripts/page.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "css": [ "css/timer-link.css" ],
+      "js": [ "in-page-scripts/utils.js", "in-page-scripts/integrationService.js", "in-page-scripts/page.js", "in-page-scripts/integrations/bitrix24.js", "in-page-scripts/integrations/testLink.js", "in-page-scripts/integrations/zohoCRM.js" ],
+      "matches": [ "*://*/*lib/execute/execSetResults.php*", "https://*/*portal/*/*.do*", "https://*/*crm/*", "https://*/*/tasks*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "css/timer-link.css" ],
+      "exclude_matches": [ "https://chrome.google.com/webstore/*", "https://addons.opera.com/*" ],
+      "js": [ "in-page-scripts/integrations/activeCollab.js", "in-page-scripts/integrations/asana.js", "in-page-scripts/integrations/assembla.js", "in-page-scripts/integrations/axosoft.js", "in-page-scripts/integrations/basecamp.js", "in-page-scripts/integrations/bitbucket.js", "in-page-scripts/integrations/bugzilla.js", "in-page-scripts/integrations/clickup.js", "in-page-scripts/integrations/doitIm.js", "in-page-scripts/integrations/freshdesk.js", "in-page-scripts/integrations/generic.js", "in-page-scripts/integrations/gitHub.js", "in-page-scripts/integrations/gitLab.js", "in-page-scripts/integrations/google-calendar.js", "in-page-scripts/integrations/google-docs.js", "in-page-scripts/integrations/google-inbox.js", "in-page-scripts/integrations/google-keep.js", "in-page-scripts/integrations/google-mail.js", "in-page-scripts/integrations/jira.js", "in-page-scripts/integrations/megaplan.js", "in-page-scripts/integrations/openProject.js", "in-page-scripts/integrations/pipedrive.js", "in-page-scripts/integrations/pivotalTracker.js", "in-page-scripts/integrations/podio.js", "in-page-scripts/integrations/producteev.js", "in-page-scripts/integrations/redmine.js", "in-page-scripts/integrations/salesforce.js", "in-page-scripts/integrations/sprintly.js", "in-page-scripts/integrations/taiga.js", "in-page-scripts/integrations/teamweek.js", "in-page-scripts/integrations/teamwork.js", "in-page-scripts/integrations/testRail.js", "in-page-scripts/integrations/tfs.js", "in-page-scripts/integrations/todoist.js", "in-page-scripts/integrations/trac.js", "in-page-scripts/integrations/trello.js", "in-page-scripts/integrations/usedesk.js", "in-page-scripts/integrations/userecho.js", "in-page-scripts/integrations/uservoice.js", "in-page-scripts/integrations/waffle.js", "in-page-scripts/integrations/wrike.js", "in-page-scripts/integrations/wunderlist.js", "in-page-scripts/integrations/youTrack.js", "in-page-scripts/integrations/zendesk.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "exclude_matches": [ "https://chrome.google.com/webstore/*", "https://addons.opera.com/*" ],
+      "js": [ "in-page-scripts/init.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "exclude_matches": [ "https://chrome.google.com/webstore/*", "https://addons.opera.com/*" ],
+      "js": [ "in-page-scripts/topmostPage.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "in-page-scripts/version.js" ],
+      "matches": [ "https://beta.tmetric.com/*", "https://app.tmetric.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Simple time tracking extension which helps you be more productive, complete projects in time and bill your clients correctly.",
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgHSA+Ya9JZHSZzbuGsbU9/6dwxAXhQJQYQKl3eP32EDox4qMUO/FwyJNXyzQih/JurUCMr2sj8IuaClCeSCy0G9UoWD9/+kWXuhrhlkJAjqeqUU0cBBvE6lDjBR2/0jGO7LkcjvyxINEckIezaHUTud/edqPqBqgj1/f2UzzQ7y+qz93pQZYZ33mCq9kH73KiHXhi548avPQrACjHaumAg/TLijpeCPXpUJmZe+c8S3fHlccRVrgDGCjq2cYQrqwBFE2wVSKI2FTn8kqV9neI5/jR9Y9X/nIMmAbhQ6CVx1hVe9cgfy0Bwc725QQO379XzrRx/qos8jWu/RqI8vjYQIDAQAB",
+   "manifest_version": 2,
+   "name": "TMetric – Time Tracker & Productivity App",
+   "options_ui": {
+      "page": "settings/settings.html"
+   },
+   "permissions": [ "activeTab", "tabs", "notifications", "http://*/*", "https://*/*", "storage" ],
+   "short_name": "TMetric",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.10.0",
+   "web_accessible_resources": [ "popup/popup.html" ]
+}

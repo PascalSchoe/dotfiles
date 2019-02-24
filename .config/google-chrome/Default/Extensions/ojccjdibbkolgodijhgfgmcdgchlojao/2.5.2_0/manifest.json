@@ -1,0 +1,35 @@
+{
+   "background": {
+      "scripts": [ "jquery-2.1.1.min.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "tool-19-default.png",
+         "38": "tool-38-default.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Punchtime"
+   },
+   "content_scripts": [ {
+      "css": [ "content.css" ],
+      "matches": [ "https://trello.com/*" ]
+   }, {
+      "js": [ "jquery-2.1.1.min.js", "trello-client.js", "content.js" ],
+      "matches": [ "https://trello.com/*", "https://app.punchti.me/*" ]
+   } ],
+   "description": "Time tracking and analysis for projects on Trello",
+   "externally_connectable": {
+      "matches": [ "*://app.punchti.me/*", "*://api.punchti.me/*", "*://trello.com/*", "*://localhost/*" ]
+   },
+   "homepage_url": "http://www.punchti.me",
+   "icons": {
+      "128": "128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCGv/E+JG8Xdh86Q7GofA0ogX2FFRgmBaZ6wTZEYjVj6EUjBKKGsQoLBb3BQROsywkOWf7l/3vF9s5gsfyo2ustz3Nu/WTWHgkF94lxWh7UQPu00yFhpjUO2i4IqsA9qu1kPOvc9LxVlXx5LUnSsEgImC+spY8iSq/SBxFIkDT3fQIDAQAB",
+   "manifest_version": 2,
+   "name": "Punchtime for Trello",
+   "permissions": [ "https://api.punchti.me/*", "https://app.punchti.me/*", "https://trello.com/*", "storage", "notifications", "tabs" ],
+   "short_name": "Punchtime",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.5.2"
+}

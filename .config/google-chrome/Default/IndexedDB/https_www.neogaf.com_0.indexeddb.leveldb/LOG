@@ -1,0 +1,9 @@
+2018/10/20-20:41:02.652 12831 Reusing MANIFEST /home/pschoe/.config/google-chrome/Default/IndexedDB/https_www.neogaf.com_0.indexeddb.leveldb/MANIFEST-000001
+2018/10/20-20:41:04.721 12229 Current memtable full; waiting...
+2018/10/20-20:41:04.721 21938 Level-0 table #5: started
+2018/10/20-20:41:04.764 21938 Level-0 table #5: 438 bytes OK
+2018/10/20-20:41:04.806 21938 Delete type=0 #3
+2018/10/20-20:41:04.807 21938 Level-0 table #7: started
+2018/10/20-20:41:04.807 21938 Level-0 table #7: 0 bytes OK
+2018/10/20-20:41:04.848 21938 Delete type=0 #4
+2018/10/20-20:41:04.848 21938 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

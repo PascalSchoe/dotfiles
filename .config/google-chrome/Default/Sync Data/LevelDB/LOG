@@ -1,0 +1,6 @@
+2019/02/24-11:21:57.059 2789 Reusing MANIFEST /home/pschoe/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+2019/02/24-11:21:57.059 2789 Recovering log #851
+2019/02/24-11:21:57.059 2789 Reusing old log /home/pschoe/.config/google-chrome/Default/Sync Data/LevelDB/000851.log 
+2019/02/24-15:38:25.608 29ee Level-0 table #855: started
+2019/02/24-15:38:25.646 29ee Level-0 table #855: 232554 bytes OK
+2019/02/24-15:38:25.714 29ee Delete type=0 #851

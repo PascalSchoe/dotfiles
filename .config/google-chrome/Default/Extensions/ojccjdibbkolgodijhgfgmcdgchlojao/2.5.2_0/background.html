@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Punchtime</title>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+      function handleDirectMessage(message) {
+        $(window).trigger('pt:popovermessage', message);
+      }
+    </script>
+    <script src="background.js"></script>
+  </head>
+  <body></body>
+</html>

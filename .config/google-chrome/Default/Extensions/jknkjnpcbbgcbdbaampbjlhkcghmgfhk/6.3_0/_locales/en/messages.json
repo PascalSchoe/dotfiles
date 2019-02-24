@@ -1,0 +1,113 @@
+{
+   "context_menu": {
+      "message": "Block videos from this channel"
+   },
+   "delete_action": {
+      "message": "Delete"
+   },
+   "extension_description": {
+      "message": "Block YouTube videos from any channel you want."
+   },
+   "extension_name": {
+      "message": "Video Blocker"
+   },
+   "extension_short_name": {
+      "message": "Video Blocker"
+   },
+   "item_added": {
+      "message": "Item has been added to the blocklist."
+   },
+   "item_deleted": {
+      "message": "Item has been deleted from the blocklist."
+   },
+   "item_found": {
+      "message": "item found."
+   },
+   "items_cleared": {
+      "message": "All items have been deleted from the blocklist."
+   },
+   "items_exported": {
+      "message": "Items have been exported."
+   },
+   "items_found": {
+      "message": "items found."
+   },
+   "items_imported": {
+      "message": "Items have been imported to the blocklist."
+   },
+   "key_placeholder": {
+      "message": ""
+   },
+   "key_quick_placeholder": {
+      "message": "Quick key add..."
+   },
+   "login_failed": {
+      "message": "Incorrect password, try again."
+   },
+   "nav_blocklist": {
+      "message": "Blocklist"
+   },
+   "nav_clear": {
+      "message": "Clear"
+   },
+   "nav_donate": {
+      "message": "Donate"
+   },
+   "nav_export": {
+      "message": "Export"
+   },
+   "nav_general": {
+      "message": "General"
+   },
+   "nav_help": {
+      "message": "Help"
+   },
+   "nav_import": {
+      "message": "Import"
+   },
+   "nav_installed": {
+      "message": "Extension Installed"
+   },
+   "nav_login": {
+      "message": "Login"
+   },
+   "nav_new": {
+      "message": "Add new"
+   },
+   "nav_options": {
+      "message": "Options"
+   },
+   "nav_search": {
+      "message": "Search"
+   },
+   "nav_security": {
+      "message": "Security"
+   },
+   "nav_storage": {
+      "message": "Storage"
+   },
+   "nav_thanks": {
+      "message": "Thank You"
+   },
+   "nav_tools": {
+      "message": "Tools"
+   },
+   "nav_updated": {
+      "message": "Extension Updated"
+   },
+   "no_items_found": {
+      "message": "No items found."
+   },
+   "options_updated": {
+      "message": "Options have been updated."
+   },
+   "pageaction_title": {
+      "message": "Video Blocker"
+   },
+   "password_placeholder": {
+      "message": "Password..."
+   },
+   "search_placeholder": {
+      "message": "Search..."
+   }
+}
