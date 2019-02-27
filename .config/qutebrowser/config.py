@@ -150,15 +150,16 @@
 ## Background color for hints. Note that you can use a `rgba(...)` value
 ## for transparency.
 ## Type: QssColor
-# c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+#c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(220, 20, 60, 0.8), stop:1 rgba(255, 69, 0, 0.8))'
 
 ## Font color for hints.
 ## Type: QssColor
-# c.colors.hints.fg = 'black'
+c.colors.hints.fg = '#FFF8DC'
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-# c.colors.hints.match.fg = 'green'
+c.colors.hints.match.fg = '#333333'
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -361,7 +362,10 @@
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.even.bg = 'black'
+#c.colors.tabs.selected.even.bg = '#009ACD'
+#c.colors.tabs.selected.even.bg = '#458D74'
+c.colors.tabs.selected.even.bg = '#FF6103'
+#c.colors.tabs.selected.even.bg = '#00C5CD'
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
@@ -369,7 +373,7 @@
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.odd.bg = 'black'
+c.colors.tabs.selected.odd.bg = c.colors.tabs.selected.even.bg
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
@@ -417,7 +421,7 @@
 ##   - always: Whenever a completion is available.
 ##   - auto: Whenever a completion is requested.
 ##   - never: Never.
-# c.completion.show = 'always'
+c.completion.show = 'always'
 
 ## Shrink the completion to be smaller than the configured size if there
 ## are no scrollbars.
@@ -435,7 +439,7 @@
 ## Number of URLs to show in the web history. 0: no history / -1:
 ## unlimited
 ## Type: Int
-# c.completion.web_history_max_items = -1
+c.completion.web_history_max_items = -1
 
 ## Require a confirmation before quitting the application.
 ## Type: ConfirmQuit
@@ -475,12 +479,12 @@
 ##   - no-3rdparty: Accept cookies from the same origin only.
 ##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
 ##   - never: Don't accept cookies at all.
-# c.content.cookies.accept = 'no-3rdparty'
+c.content.cookies.accept = 'all'
 
 ## Store cookies. Note this option needs a restart with QtWebEngine on Qt
 ## < 5.9.
 ## Type: Bool
-# c.content.cookies.store = True
+c.content.cookies.store = True
 
 ## Default encoding to use for websites. The encoding must be a string
 ## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
@@ -562,11 +566,11 @@
 
 ## Load images automatically in web pages.
 ## Type: Bool
-# c.content.images = True
+c.content.images = True
 
 ## Show javascript alerts.
 ## Type: Bool
-# c.content.javascript.alert = True
+c.content.javascript.alert = True
 
 ## Allow JavaScript to read from or write to the clipboard. With
 ## QtWebEngine, writing the clipboard as response to a user interaction
@@ -584,7 +588,7 @@
 
 ## Enable JavaScript.
 ## Type: Bool
-# c.content.javascript.enabled = True
+c.content.javascript.enabled = True
 
 ## Log levels to use for JavaScript console logging messages. When a
 ## JavaScript message with the level given in the dictionary key is
@@ -600,7 +604,7 @@
 
 ## Show javascript prompts.
 ## Type: Bool
-# c.content.javascript.prompt = True
+c.content.javascript.prompt = True
 
 ## Allow locally loaded documents to access other local URLs.
 ## Type: Bool
@@ -612,7 +616,7 @@
 
 ## Enable support for HTML 5 local storage and Web SQL.
 ## Type: Bool
-# c.content.local_storage = True
+c.content.local_storage = True
 
 ## Allow websites to record audio/video.
 ## Type: BoolAsk
@@ -638,7 +642,7 @@
 ## still be downloaded by clicking the download button in the pdf.js
 ## viewer.
 ## Type: Bool
-# c.content.pdfjs = False
+c.content.pdfjs = True
 
 ## Enable plugins in Web pages.
 ## Type: Bool
@@ -679,7 +683,7 @@
 
 ## Enable WebGL.
 ## Type: Bool
-# c.content.webgl = True
+c.content.webgl = True
 
 ## Limit fullscreen to the browser window (does not expand to fill the
 ## screen).
@@ -725,7 +729,7 @@
 ## Valid values:
 ##   - top
 ##   - bottom
-# c.downloads.position = 'top'
+c.downloads.position = 'bottom'
 
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
@@ -855,11 +859,13 @@
 
 ## CSS border value for hints.
 ## Type: String
-# c.hints.border = '1px solid #E3BE23'
+#c.hints.border = '1px solid #E3BE23'
+c.hints.border = '1px solid #DC143C'
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
-# c.hints.chars = 'asdfghjkl'
+# using dvp-homerow for hints
+c.hints.chars = 'aoeuhtns'
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -1419,16 +1425,16 @@ c.url.start_pages = ['https://google.de']
 # config.bind('J', 'tab-next')
 # config.bind('K', 'tab-prev')
 # config.bind('L', 'forward')
-# config.bind('M', 'bookmark-add')
+config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'set-cmd-text -s :open -t')
 # config.bind('PP', 'open -t -- {primary}')
 # config.bind('Pp', 'open -t -- {clipboard}')
 # config.bind('R', 'reload -f')
-# config.bind('Sb', 'open qute://bookmarks#bookmarks')
-# config.bind('Sh', 'open qute://history')
-# config.bind('Sq', 'open qute://bookmarks')
-# config.bind('Ss', 'open qute://settings')
+config.bind('Sb', 'open qute://bookmarks#bookmarks')
+config.bind('Sh', 'open qute://history')
+config.bind('Sq', 'open qute://bookmarks')
+config.bind('Ss', 'open qute://settings')
 # config.bind('T', 'tab-focus')
 # config.bind('ZQ', 'quit')
 # config.bind('ZZ', 'quit --save')
@@ -1443,13 +1449,13 @@ c.url.start_pages = ['https://google.de']
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
-# config.bind('gB', 'set-cmd-text -s :bookmark-load -t')
+config.bind('gB', 'set-cmd-text -s :bookmark-load -t')
 # config.bind('gC', 'tab-clone')
 # config.bind('gO', 'set-cmd-text :open -t -r {url:pretty}')
 # config.bind('gU', 'navigate up -t')
 # config.bind('g^', 'tab-focus 1')
 # config.bind('ga', 'open -t')
-# config.bind('gb', 'set-cmd-text -s :bookmark-load')
+config.bind('gb', 'set-cmd-text -s :bookmark-load')
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
@@ -1480,7 +1486,7 @@ c.url.start_pages = ['https://google.de']
 # config.bind('u', 'undo')
 # config.bind('v', 'enter-mode caret')
 # config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
-# config.bind('wO', 'set-cmd-text :open -w {url:pretty}')
+config.bind('wO', 'set-cmd-text :open {url:pretty}')
 # config.bind('wP', 'open -w -- {primary}')
 # config.bind('wb', 'set-cmd-text -s :quickmark-load -w')
 # config.bind('wf', 'hint all window')
