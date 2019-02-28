@@ -85,10 +85,14 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
 
 " Custom remapping
+noremap l s
+
+" Navigation
 noremap h h
 noremap t j
 noremap n k
 noremap s l
+
 " because we use 'n' for movement we have to remap it for searching the next pattern
 noremap <Leader>n n
 

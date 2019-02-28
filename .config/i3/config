@@ -110,6 +110,7 @@ set $name_ws4 "4: Remote "
 set $name_ws5 "5: Docker "
 set $name_ws6 "6: Tests "
 set $name_ws7 "7: Files "
+set $name_ws8 "8: Music "
 
 
 # switch to workspace
@@ -120,7 +121,7 @@ bindsym $mod+$k_ws4 workspace $name_ws4
 bindsym $mod+$k_ws5 workspace $name_ws5
 bindsym $mod+$k_ws6 workspace $name_ws6
 bindsym $mod+$k_ws7 workspace $name_ws7
-bindsym $mod+$k_ws8 workspace 8
+bindsym $mod+$k_ws8 workspace $name_ws8
 bindsym $mod+$k_ws9 workspace 9
 bindsym $mod+$k_ws10 workspace 10
 
@@ -132,14 +133,13 @@ bindsym $mod+Shift+$k_ws4 move container to workspace $name_ws4
 bindsym $mod+Shift+$k_ws5 move container to workspace $name_ws5
 bindsym $mod+Shift+$k_ws6 move container to workspace $name_ws6
 bindsym $mod+Shift+$k_ws7 move container to workspace $name_ws7
-bindsym $mod+Shift+$k_ws8 move container to workspace 8
+bindsym $mod+Shift+$k_ws8 move container to workspace $name_ws8
 bindsym $mod+Shift+$k_ws9 move container to workspace 9
 bindsym $mod+Shift+$k_ws10 move container to workspace 10
 
 
 # assignment of window-classes to workspaces
 assign [class="Google-chrome"] $name_ws2
-assign [class="qutebrowser"] $name_ws2
 assign [class="Remmina"] $name_ws4
 assign [title="ranger"] $name_ws7
 assign [class="jetbrains-idea-ce"] $name_ws3
@@ -196,8 +196,22 @@ bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# System-functions dialog, e.g. reboot, shutdown
+#bindsym $mod+Shift+x exec /home/pschoe/.scripts/system-functions.sh "Which action shall I perform?"
+
+mode "system" {
+        # These bindings trigger as soon as you enter the system-mode
+
+        bindsym r exec confirm-prompt "Do you want to reboot the Pc?" "systemctl reboot"
+        bindsym s exec confirm-prompt "Do you want to shutdown the Pc?" "systemctl poweroff"
+        bindsym l exec confirm-prompt "Do you want to end the session" "i3-msg exit"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Shift+period mode "system"
+
 
 bindsym $mod+e exec dmenu_run
 
@@ -212,25 +226,23 @@ bindsym mod4+i exec intellij-idea-community
 bindsym mod4+e exec eclipse
 bindsym mod4+p exec pycharm-community
 
-# open configs
-bindsym mod4+c+i exec x-terminal-emulator -e hallo
-
 # reload .Xresources
 bindsym $mod+x exec xrdb ~/.Xdefaults
 
 # shutdown 
 set $msg_shutdown "Pc herunterfahren?"
 set $cmd_shutdown "shutdown"
-bindsym $mod+shift+x exec confirm-prompt $msg_shutdown $cmd_shutdown
+#bindsym $mod+shift+x exec confirm-prompt $msg_shutdown $cmd_shutdown
 
 # screen positioning
 exec_always xrandr --output VGA-0 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1280x1024 --pos 1280x0 --rotate normal --output HDMI-0 --off
 
-# starting 'compton' for transparency
-exec_always compton
 
-# autostart idea
-exec intellij-idea-community
+# autostarts
+  # starting 'compton' for transparency
+exec_always compton
+  # browser for music only
+exec --no-startup-id i3-msg 'workspace $name_ws8; exec $browser'
 
 # Backgroundimage
 exec_always --no-startup-id feh --bg-scale /home/pschoe/Pictures/wallhaven-6.jpg
