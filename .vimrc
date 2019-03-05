@@ -109,5 +109,6 @@ autocmd BufEnter *.xml :setlocal filetype=xml
 set smartindent
 set ruler
 set number
+set hls
 
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTaps
