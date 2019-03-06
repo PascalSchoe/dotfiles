@@ -1,0 +1,125 @@
+#!/bin/bash
+
+loc_home="/home/$USER"
+loc_scripts="${loc_home}/.scripts"
+loc_config="${loc_home}/.config"
+loc_repo="${loc_home}/git/dotfiles"
+loc_repo_config="${loc_repo}/.config"
+loc_repo_scripts="${loc_repo}/.scripts"
+
+
+# i3wm config
+loc_i3_config="${loc_config}/i3"
+loc_repo_i3_config="${loc_repo_config}/i3"
+fn_i3_config='config'
+
+# ranger config
+loc_ranger_config="${loc_config}/ranger"
+loc_repo_ranger_config="${loc_repo_config}/ranger"
+fn_ranger_rc='rc.conf'
+fn_ranger_rifle='rifle.conf'
+
+# qutebrowser config
+loc_qutebrowser_config="${loc_config}/qutebrowser"
+loc_repo_qutebrowser_config="${loc_repo_config}/qutebrowser"
+fn_qutebrowser_config='config.py'
+
+# gtk config
+loc_gtk2_config="${loc_config}/gtk-2.0"
+loc_repo_gtk2_config="${loc_repo_config}/gtk-2.0"
+fn_gtk2_config='gtkfilechooser.ini'
+
+loc_gtk3_config="${loc_config}/gtk-3.0"
+loc_repo_gtk3_config="${loc_repo_config}/gtk-3.0"
+fn_gtk3_config='settings.ini'
+
+loc_gtk4_config="${loc_config}/gtk-4.0"
+loc_repo_gtk4_config="${loc_repo_config}/gtk-4.0"
+fn_gtk4_config='settings.ini'
+
+# vim config
+loc_vim_home="${loc_home}/.vim"
+loc_repo_vim_home="${loc_repo}/.vim"
+loc_vim_config="$loc_home"
+loc_repo_vim_config="$loc_repo"
+fn_vim_config='.vimrc'
+
+
+# Xfiles
+loc_xfiles="$loc_home"
+loc_repo_xfiles="$loc_repo"
+
+# Xresources
+fn_xresources_config='.Xresources'
+# Xdefaults
+fn_xdefaults_config='.Xdefaults'
+
+
+loc_keyboard_layout_config="/etc/default"
+loc_repo_keyboard_layout_config="${loc_repo}$loc_keyboard_layout_config"
+fn_keyboard_layout_config="keyboard"
+
+
+install() {
+  echo "es wurde install!!"
+}
+
+export() {
+  # copies files from the system into respective destinations into the repository
+  # vimrc
+  cp-adv "${loc_vim_config}/$fn_vim_config" "$loc_repo"
+  # Xfiles
+  cp-adv "${loc_xfiles}/$fn_xresources_config" "$loc_repo_xfiles"
+  cp-adv "${loc_xfiles}/$fn_xdefaults_config" "$loc_repo_xfiles"
+
+  # vim
+  cp-adv "${loc_vim_home}/plugin" "${loc_repo_vim_home}"
+  cp-adv "${loc_vim_home}/doc" "${loc_repo_vim_home}"
+  cp-adv "${loc_vim_home}/ftplugin" "${loc_repo_vim_home}"
+  cp-adv "${loc_vim_home}/autoload" "${loc_repo_vim_home}"
+  cp-adv "${loc_vim_home}/after" "${loc_repo_vim_home}"
+
+  # ranger config
+  cp-adv "${loc_ranger_config}/$fn_ranger_rc" "$loc_repo_ranger_config"
+  cp-adv "${loc_ranger_config}/$fn_ranger_rifle" "$loc_repo_ranger_config"
+
+  # qutebrowser config
+  cp-adv "${loc_qutebrowser_config}/$fn_qutebrowser_config" "$loc_repo_qutebrowser_config"
+
+  # scripts
+  cp-adv "$loc_scripts" "$loc_repo_scripts"
+
+  # gtk
+  cp-adv "${loc_gtk2_config}/$fn_gtk2_config" "$loc_repo_gtk2_config"
+  cp-adv "${loc_gtk3_config}/$fn_gtk3_config" "$loc_repo_gtk3_config"
+  cp-adv "${loc_gtk4_config}/$fn_gtk4_config" "$loc_repo_gtk4_config"
+
+  # keyboard layout
+  cp-adv "${loc_keyboard_layout_config}/$fn_keyboard_layout_config" "$loc_repo_keyboard_layout_config"
+
+  # store commit message
+   cd "$loc_repo"
+   git add .
+   git commit -m "$1"
+
+  echo "\nConfiguration has been changed. Commit-Message: $1"
+}
+
+pull() {
+  cd "$loc_repo"
+  git pull
+}
+
+deploy() {
+  echo "es wurde export"
+}
+
+
+if declare -F "$1" &> /dev/null
+then
+  "$@"
+else
+  echo "'$1' is not a function name." >&2
+  echo "Usage config-helper: [install, export, pull, deploy]"
+  exit 1
+fi

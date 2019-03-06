@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This script does create directories which do not
+# exists before copying
+
+if [ ! -d "$2" ];then
+  mkdir -p "$2"
+fi
+
+cp -R "$1" "$2"
