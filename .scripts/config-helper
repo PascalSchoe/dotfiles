@@ -61,7 +61,43 @@ fn_keyboard_layout_config="keyboard"
 
 
 install() {
-  echo "es wurde install!!"
+  # copies files from the system into respective destinations into the repository
+  # vimrc
+  cp-adv "${loc_repo}/$fn_vim_config" "${loc_vim_config}"
+
+  # Xfiles
+  cp-adv  "${loc_repo_xfiles}/$fn_xresources_config" "${loc_xfiles}"
+  cp-adv  "${loc_repo_xfiles}/$fn_xdefaults_config" "${loc_xfiles}"
+
+  # vim
+  cp-adv "${loc_repo_vim_home}/plugin" "${loc_vim_home}" 
+  cp-adv "${loc_repo_vim_home}/doc" "${loc_vim_home}" 
+  cp-adv "${loc_repo_vim_home}/ftplugin" "${loc_vim_home}" 
+  cp-adv "${loc_repo_vim_home}/autoload" "${loc_vim_home}" 
+  cp-adv "${loc_repo_vim_home}/after" "${loc_vim_home}" 
+
+  # ranger config
+  cp-adv "${loc_repo_ranger_config}/$fn_ranger_rc" "${loc_ranger_config}" 
+  cp-adv "${loc_repo_ranger_config}/$fn_ranger_rifle" "${loc_ranger_config}" 
+
+  # qutebrowser config
+  cp-adv "${loc_repo_qutebrowser_config}/$fn_qutebrowser_config" "${loc_qutebrowser_config}" 
+
+  # i3 config
+  cp-adv "${loc_repo_i3_config}/$fn_i3_config" "${loc_i3_config}" 
+
+  # scripts
+  cp-adv "$loc_repo_scripts" "$loc_scripts"
+
+  # gtk
+  cp-adv "${loc_repo_gtk2_config}/$fn_gtk2_config" "${loc_gtk2_config}" 
+  cp-adv "${loc_repo_gtk3_config}/$fn_gtk3_config" "${loc_gtk3_config}" 
+  cp-adv "${loc_repo_gtk4_config}/$fn_gtk4_config" "${loc_gtk4_config}" 
+
+  # keyboard layout
+  cp-adv "${loc_repo_keyboard_layout_config}/$fn_keyboard_layout_config" "${loc_keyboard_layout_config}" 
+
+   echo -e "\nConfiguration has been installed.\nYou may have to restart your Applications to and restart the i3wm-Session to take effect.\n"
 }
 
 export() {
@@ -85,6 +121,9 @@ export() {
 
   # qutebrowser config
   cp-adv "${loc_qutebrowser_config}/$fn_qutebrowser_config" "$loc_repo_qutebrowser_config"
+
+  # i3 config
+  cp-adv "${loc_i3_config}/$fn_i3_config" "${loc_repo_i3_config}"  
 
   # scripts
   cp-adv "$loc_scripts" "$loc_repo_scripts"
