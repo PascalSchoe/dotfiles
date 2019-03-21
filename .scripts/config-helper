@@ -141,7 +141,7 @@ export() {
    git add .
    git commit -m "$1"
 
-   echo -e "\nConfiguration has been changed.\n Commit-Message: \n$1"
+   echo -e "\nConfiguration has been changed.\nCommit-Message:\n$1"
 }
 
 pull() {

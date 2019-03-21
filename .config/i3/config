@@ -137,14 +137,22 @@ bindsym $mod+Shift+$k_ws8 move container to workspace $name_ws8
 bindsym $mod+Shift+$k_ws9 move container to workspace 9
 bindsym $mod+Shift+$k_ws10 move container to workspace 10
 
+#move ws to other screen
+mode "move-ws" {
+  bindsym h move workspace to output left
+  bindsym s move workspace to output right
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "move-ws"
+
 
 # assignment of window-classes to workspaces
 assign [class="Google-chrome"] $name_ws2
 assign [class="Remmina"] $name_ws4
 assign [title="ranger"] $name_ws7
-assign [class="jetbrains-idea-ce"] $name_ws3
-assign [class="jetbrains-pycharm-ce"] $name_ws3
-assign [class="Eclipse"] $name_ws3
 
 
 
