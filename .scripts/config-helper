@@ -44,6 +44,11 @@ loc_vim_config="$loc_home"
 loc_repo_vim_config="$loc_repo"
 fn_vim_config='.vimrc'
 
+# bashrc
+loc_bashrc="$loc_home"
+loc_repo_bashrc="$loc_repo"
+fn_bashrc_config='.bashrc'
+
 
 # Xfiles
 loc_xfiles="$loc_home"
@@ -64,6 +69,9 @@ install() {
   # copies files from the system into respective destinations into the repository
   # vimrc
   cp-adv "${loc_repo}/$fn_vim_config" "${loc_vim_config}"
+
+  # bashrc
+  cp-adv  "${loc_repo_bashrc}/$fn_bashrc_config" "${loc_bashrc}"
 
   # Xfiles
   cp-adv  "${loc_repo_xfiles}/$fn_xresources_config" "${loc_xfiles}"
@@ -104,6 +112,10 @@ export() {
   # copies files from the system into respective destinations into the repository
   # vimrc
   cp-adv "${loc_vim_config}/$fn_vim_config" "$loc_repo"
+
+  # bashrc
+  cp-adv  "${loc_bashrc}/$fn_bashrc_config" "${loc_repo_bashrc}"
+
   # Xfiles
   cp-adv "${loc_xfiles}/$fn_xresources_config" "$loc_repo_xfiles"
   cp-adv "${loc_xfiles}/$fn_xdefaults_config" "$loc_repo_xfiles"
