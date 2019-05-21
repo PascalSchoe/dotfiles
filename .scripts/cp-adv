@@ -7,4 +7,4 @@ if [ ! -d "$2" ];then
   mkdir -p "$2"
 fi
 
-cp -R "$1" "$2"
+sudo cp -R "$1" "$2"
