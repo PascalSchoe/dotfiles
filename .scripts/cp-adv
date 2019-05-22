@@ -4,7 +4,7 @@
 # exists before copying
 
 if [ ! -d "$2" ];then
-  mkdir -p "$2"
+ sudo mkdir -p "$2"
 fi
 
 sudo cp -R "$1" "$2"
