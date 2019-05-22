@@ -1,4 +1,4 @@
-*.alpha: 180
+*.alpha: .85
 *foreground: #00cc00
 *foreground_bold: #a8a19f
 *cursor: #a8a19f
