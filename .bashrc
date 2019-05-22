@@ -149,3 +149,11 @@ sqldev(){
 	/opt/sqldeveloper/sqldeveloper.sh
 }
 
+export JAVA_HOME='/java'
+export MAVEN_HOME='/apache-maven'
+export M2_HOME='/apache-maven'
+export PATH='/java/bin:/apache-maven/bin:/eclipse-installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/hadoop/sbin:/usr/local/hadoop/bin:/usr/local/pig/bin:/home/pschoe/.scripts:/usr/local/hadoop/sbin:/usr/local/hadoop/bin:/usr/local/pig/bin:/home/pschoe/.scripts'
+export JAVA_HOME='/java'
+export MAVEN_HOME='/apache-maven'
+export M2_HOME='/apache-maven'
+export PATH='/java/bin:/apache-maven/bin:/eclipse-installer:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/hadoop/sbin:/usr/local/hadoop/bin:/usr/local/pig/bin:/home/pschoe/.scripts:/usr/local/hadoop/sbin:/usr/local/hadoop/bin:/usr/local/pig/bin:/home/pschoe/.scripts'
