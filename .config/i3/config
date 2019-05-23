@@ -7,6 +7,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+set_from_resource $user echo "$USER"
 
 set $mod Mod1
 
@@ -217,9 +218,9 @@ bindsym $mod+Shift+p restart
 mode "system" {
         # These bindings trigger as soon as you enter the system-mode
 
-        bindsym r exec confirm-prompt "Do you want to reboot the Pc?" "systemctl reboot"
-        bindsym s exec confirm-prompt "Do you want to shutdown the Pc?" "systemctl poweroff"
-        bindsym l exec confirm-prompt "Do you want to end the session" "i3-msg exit"
+        bindsym r exec --no-startup-id $HOME/.scripts/confirm-prompt "Do you want to reboot the Pc?" "systemctl reboot"
+        bindsym s exec --no-startup-id $HOME/.scripts/confirm-prompt "Do you want to shutdown the Pc?" "systemctl poweroff"
+        bindsym l exec --no-startup-id $HOME/.scripts/confirm-prompt "Do you want to end the session" "i3-msg exit"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -256,8 +257,10 @@ exec_always xrandr --output VGA-0 --primary --mode 1280x1024 --pos 0x0 --rotate 
 # autostarts
   # starting 'compton' for transparency
 exec_always compton
+  # loading xdefaults
+exec_always xrdb $HOME/.Xdefaults
   # browser for music only
 exec --no-startup-id i3-msg 'workspace $name_ws8; exec $browser'
 
 # Backgroundimage
-exec_always --no-startup-id feh --bg-scale /home/pschoe/Pictures/wallhaven-6.jpg
+exec_always --no-startup-id feh --bg-scale /home/pschoe/Bilder/wallhaven-1.jpg
